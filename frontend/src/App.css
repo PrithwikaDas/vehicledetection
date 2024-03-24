@@ -1,0 +1,52 @@
+/* Base styles for the entire application */
+.App {
+  text-align: center;
+  background-image: url("tech.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white; /* Set text color to white */
+  font-family: Arial, sans-serif; /* Use a different font */
+}
+
+/* Animation for pulsating effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Title styles */
+.title {
+  font-size: 3rem;
+  margin-top: 20vh; /* Adjust vertical spacing */
+  animation: pulse 2s infinite; /* Apply pulsating animation */
+}
+
+/* Logo styles */
+.App-logo {
+  height: 40vmin;
+  width: auto; /* Adjust width proportionally to height */
+  pointer-events: none; /* Prevent pointer events on the logo */
+  transition: transform 0.3s ease; /* Smooth transition for transform property */
+}
+
+/* Header styles */
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+/* Link styles */
+.App-link {
+  color: rgb(244, 244, 245);
+}
