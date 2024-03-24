@@ -17,7 +17,7 @@ function App() {
       formData.append("file", file);
 
       // Send a POST request to the backend with the image data
-      fetch("http://127.0.0.1:5000/process-image", {
+      fetch("http://localhost:5000/api/process-image", {
         method: "POST",
         body: formData,
       })

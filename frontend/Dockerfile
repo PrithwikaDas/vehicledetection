@@ -1,25 +1,21 @@
 # Use the official Node.js image as base
-FROM node:20.10.0 AS build
+FROM node:latest AS build
 
 # Set the working directory in the container
 WORKDIR /app/frontend
 
-# Copy the entire frontend directory contents to the container
-COPY . .
-
-# Install dependencies
-RUN rm -rf node_modules
-
-# Install dependencies
-RUN rm -rf package-lock.json
-
+# Copy package.json and package-lock.json to the working directory
+COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
 
+# Copy the entire frontend directory contents to the container
+COPY . .
 
-# Build the React app
-CMD ["npm", "start"]
+CMD ["npm", "run","start"]
+# # Build the React app
+# RUN npm run build
 
 # # Use a lightweight Node.js image as a base for serving the app
 # FROM node:alpine
@@ -34,4 +30,4 @@ CMD ["npm", "start"]
 # EXPOSE 3000
 
 # # Command to run the React app
-# CMD ["node", "frontend/server.js"]
+# CMD ["npx", "serve", "-s", "frontend", "-l", "3000"]

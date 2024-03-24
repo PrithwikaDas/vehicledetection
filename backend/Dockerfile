@@ -4,16 +4,10 @@ FROM python:latest
 # Set the working directory in the container
 WORKDIR /app/backend
 
-# Copy the backend directory contents to the container
+
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
 COPY . .
 
-# Install dependencies
-RUN pip install -r requirements.txt
-
-
-
-# Expose the port on which the Flask app will run
-EXPOSE 5000
-
-# Command to run the Flask app
-CMD ["python", "app.py"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
