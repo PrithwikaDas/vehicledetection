@@ -31,9 +31,9 @@
 /* Logo styles */
 .App-logo {
   height: 40vmin;
-  width: auto; /* Adjust width proportionally to height */
-  pointer-events: none; /* Prevent pointer events on the logo */
-  transition: transform 0.3s ease; /* Smooth transition for transform property */
+  width: auto;
+  pointer-events: none;
+  transition: transform 0.3s ease;
 }
 
 /* Header styles */
